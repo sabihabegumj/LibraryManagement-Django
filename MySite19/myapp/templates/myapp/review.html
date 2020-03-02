@@ -1,0 +1,54 @@
+{% extends 'myapp/base.html' %}
+{% block title %} Review {% endblock %}
+{% block myhdg %}
+{% endblock %}
+{% block body_block %}
+        <!-- Breadcrumb -->
+    <section id="bc" class="mt-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'myapp:index' %}">
+                            <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active"> Review</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section id="about" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                <h2><p align="center"> Please review the book, {{ request.user.first_name }} !</p></h2></div>
+            </div>
+           {% if error  %}
+               <b><h2 style="color: red"> {{ error }}</h2></b>
+           {% endif %}
+           <b>
+           <form action="{% url 'myapp:review' %}" method="post">
+           {% csrf_token %}
+                <div class="col mb-3">
+                    <label>Your Email ID</label>
+                    <input type="text" name="reviewer" class="form-control" placeholder="Your Email ID" value="{{ user.email }}">
+                </div>
+                <div class="col mb-3">
+                    <label>Book</label>
+                    <select id="book" name="book" class="form-control">
+                        {% for book in form.fields.book.queryset %}
+                            <option value="{{ book.id }}">{{ book}}</option>
+                        {% endfor %}
+                    </select>
+                 </div>
+                <div class="col mb-3">
+                    <label>Rating: </label>
+                    <input type="text" name="rating" class="form-control" placeholder="An Integer between 1 (Worst) and 5 (Best)">
+                </div>
+                <div><label>Comments: </label>
+                    <input type="text" name="comments" class="form-control" id="comment">
+                </div>
+                <input type="submit" name="submit1" value="Review Book" class="btn btn-secondary btn-block mt-4 mb-5"  />
+            </form></b>
+{% endblock %}
+

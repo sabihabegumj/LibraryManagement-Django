@@ -1,0 +1,51 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %} About page {% endblock %}
+{% block myhdg %}
+{% endblock %}
+{% block body_block %}
+    <!-- Breadcrumb -->
+    <section id="bc" class="mt-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'myapp:index' %}">
+                            <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item active"> About</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section id="about" class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>Library Management Application System</h2>
+                    <img src="{% static 'img/about.jpg' %}" alt="">
+                    <p class="mt-4" align="justify">The Library management system is nowadays essential for schools, colleges, private libraries, and other organizations. They can use this application as the purpose of books issuing and returning for renewal. Moreover, this application helps the librarian to maintain information about book issuing and returning the book before the last date.Effective library management system to manage all your library efficiently and organically, Libraries rely on library management systems to manage asset collections as well as relationships with their members.</p>
+                </div>
+                <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="{% static 'img/lucky.jpg' %}" alt="Seller of the month">
+                                <div class="card-body">
+                                    <p><h5 class="card-title">Your Lucky Number: <span  class="text-secondary">{{ mynum }} </span></h5>
+                                    <p class="card-text" align="justify">Checks for a cookie ‘lucky_num’ that displays a ‘lucky number’ for the user which is between 1 and 100. If the cookie exists, displays the value from cookie else generates a random number between 1 and 100 and assigns it to the cookie and display
+                                    </p>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="bg-dark text-white text-center">
+        <h3 class="display-4">We are here to serve you only the Best!</h3>
+        <h5>Why still waiting? Start your search and find the books you Love</h5>
+        <hr>
+        <a href="{% url 'myapp:findbooks' %}" class="btn btn-secondary text-white btn-lg">Search Books</a>
+    </section>
+
+{% endblock %}

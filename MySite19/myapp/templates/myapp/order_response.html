@@ -1,0 +1,78 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %}Order Invoice{% endblock %}
+{% block myhdg %}
+{% endblock %}
+{% block body_block %}
+      <!-- Breadcrumb -->
+    <section id="bc" class="mt-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'myapp:index' %}">
+                            <i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'myapp:place_order' %}">
+                            <i class="fas fa-shopping-cart"></i> Place Order</a>
+                    </li>
+                    <li class="breadcrumb-item active">Order Invoice</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+     <section id="about" class="py-4">
+     <div class="container pb-5 pl-5 pt-4">
+         <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-center"><strong>ORDER SUMMARY</strong></h3>
+                </div>
+				{% if books %}
+				        <div class="panel-body">
+				        <div class="table-responsive">
+                         <table class="table" style="text-align: center">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">BOOK TITLE</th>
+                            <th scope="col">PRICE</th>
+                          </tr>
+                        </thead>
+                        {% for book in books %}
+                        <tbody>
+                          <tr class="thead-light">
+                            <th scope="row">{{forloop.counter}}</th>
+                            <td><a href ="{% url 'myapp:detail' book.id %}">{{book.title}}</a></td>
+                            <td>{{book.price}}</td>
+                          </tr>
+                    {% endfor %}
+                    {% if total %}
+                          <tr class="thead-dark">
+                            <th></th>
+                            <th>TOTAL PRICE</th>
+                             <th scope="col">{{total}}</th>
+                          </tr>
+                     {%  endif %}
+                          </tbody>
+                        </table>
+				        </div>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+     {% else %}
+        <div class="col-md-4">
+            <img class="card-body" src="{% static '/img/sorry.png' %}" alt="no img">
+        </div>
+         <div class="col-md-8">
+             <br><br><br><br><br>
+             <p align="center"><h2 style="color: red"> <b>No Books Match Your Search!</b></h2></p>
+         </div>
+     {% endif %}
+     </div>
+     </section>
+{% endblock %}

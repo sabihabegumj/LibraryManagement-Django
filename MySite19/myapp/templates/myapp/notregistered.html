@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block title %} Error {% endblock %}
+{% block myhdg %} {% endblock %}
+{% block body_block %}
+    <section id="about" class="py-4">
+        <div class="container">
+            <div class="row mb-50">
+                <div class="col-4">
+                       <img class="card-body" src="{% static '/img/sorry.png' %}" alt="no img">
+                       </div>
+                       <div class="col-8">
+                           <br><br><br><br>
+                       <p align="center"><h2 style="color: red"> <b>
+                           {% if error %}
+                                {{ error }}
+                           {% endif %}
+                           </b></h2></p>
+                       </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

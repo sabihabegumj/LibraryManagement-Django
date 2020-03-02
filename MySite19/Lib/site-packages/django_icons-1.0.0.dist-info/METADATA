@@ -1,0 +1,175 @@
+Metadata-Version: 2.1
+Name: django-icons
+Version: 1.0.0
+Summary: Icons for Django
+Home-page: https://github.com/zostera/django-icons
+Author: Dylan Verheul
+Author-email: dylan@zostera.nl
+License: BSD-3-Clause
+Keywords: django-icons
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Requires-Dist: Django (>=1.8)
+
+django-icons
+------------
+
+Icons for Django
+
+.. image:: https://travis-ci.org/zostera/django-icons.svg?branch=master
+    :target: https://travis-ci.org/zostera/django-icons
+
+.. image:: https://coveralls.io/repos/github/zostera/django-icons/badge.svg?branch=develop
+   :target: https://coveralls.io/github/zostera/django-icons?branch=develop
+
+.. image:: https://img.shields.io/pypi/v/django-icons.svg
+    :target: https://pypi.python.org/pypi/django-icons
+    :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/ambv/black
+
+Features
+========
+
+Use simple template tags to generate icons in your web application.
+Supports *Font Awesome* out of the box, easily adaptable for other icon libraries.
+
+The basic usage in a Django template::
+
+   {% load icons %}
+   {% icon 'edit' %}
+
+
+Requirements
+============
+
+Python 3 and matching supported Django versions.
+
+
+Running the demo
+================
+
+You can run the small demo app that is part of the test suite.
+This requires Django, so you may have to `pip install django` in your environment.
+To run the demo, from the root of the project (where you can find `manage.py`, run::
+
+   python manage.py runserver
+
+
+Running the tests
+=================
+
+The test suite uses `tox`. Run the complete test suite like this::
+
+   tox
+
+Run the tests only for the current environment like this::
+
+   python manage.py test
+
+
+Origin
+======
+
+Our plans at Zostera for an icon tool originate in https://github.com/dyve/django-bootstrap3.
+We isolated this into a Font Awesome tool in https://github.com/zostera/django-fa.
+When using our own product, we felt that the icon tool provided little improvement over plain HTML.
+Also, Font Awesome's icon names did not match the the intended function of the icon. This is how we came
+to think of a library that
+
+- Took a limited number of arguments
+- Converted those arguments into an icon
+- Was able to support multiple icon libraries
+- And could easily be extended by users
+
+This is how we came to write and use `django-icons`.
+
+
+Changelog
+---------
+
+1.0.0 - 2019-11-15
+==================
+
+- Drop support for Python < 3.5
+- Drop support for Django < 2.2
+- Add support for Django 3
+- Add support for Python 3.8
+- Add test for custom ``ImageRenderer``
+- Add Makefile for common tasks
+
+0.2.1 - 2018-07-01
+==================
+
+- Bug fixes and improvements to ``ImageRenderer`` (@mbourqui)
+
+
+0.2.0 - 2018-06-30
+==================
+
+- Add icons from images, contribution by @mbourqui
+- Adopt black code style (https://github.com/ambv/black)
+
+
+0.1.0 - 2018-01-11
+==================
+
+- Set default branch to master
+- Make ``icon`` function available as import from django_icons (fixes)
+- Add ``MaterialRenderer`` for Material icons (http://google.github.io/material-design-icons/)
+
+
+0.0.5 - 2017-12-21
+==================
+
+- Fix typo's
+- Adjust tox matrix to currently supported Django versions
+- Fixed names of tests
+- Add tests for ``BaseRenderer``
+
+
+0.0.4 - 2017-06-22
+==================
+
+- Autogenerate docs for ``icon`` template tag
+- Fix typo in README
+
+
+0.0.3 - 2017-06-22
+==================
+
+- Bug fixes
+- More tests
+- More documentation
+
+
+0.0.2 - 2017-06-19
+==================
+
+- Updated docs and tests
+- Demo of custom SVG renderer included
+- FontAwesome and Bootstrap3 renderers included
+- New structure for settings dict
+- First documentation, linked to ReadTheDocs
+- First tests
+- Introducing the ``icon`` template tag
+
+
+0.0.1 - 2017-06-15
+==================
+
+- First publication on GitHub and PyPI
+- Non-functional, just names and tests
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/form.css' %}" />
+        <!-- Bootstrap -->
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/bootstrap.css' %}" />
+        <!-- Style -->
+        <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{% static 'myapp/all.css' %}">
+
+        <title>eBook APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+    <body>
+    {% include 'myapp/navbar.html' %}
+        <div>
+            <h1>{% block myhdg %}Hello User {% endblock %}</h1>
+            {% block body_block %}*** {% endblock %}
+        </div>
+    {% block footer %}{% include 'myapp/footer.html' %}{% endblock %}
+    </body>
+
+</html>
