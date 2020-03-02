@@ -23,16 +23,16 @@
 * Step 7: Login to the admin site using the username and password you used. Here, Username : Admin and Password : password
 
 ## Screenshots
-![Example screenshot](./screenshot/s1.PNG) 
-![Example screenshot](./screenshot/s2.PNG)
-![Example screenshot](./screenshot/s3.PNG)
-![Example screenshot](./screenshot/s4.PNG)
-![Example screenshot](./screenshot/s5.PNG)
-![Example screenshot](./screenshot/s6.PNG)
-![Example screenshot](./screenshot/s7.PNG)
-![Example screenshot](./screenshot/s8.PNG)
-![Example screenshot](./screenshot/s9.PNG)
-![Example screenshot](./screenshot/s10.PNG)
+![Example screenshot](./Screenshot/s1.PNG) 
+![Example screenshot](./Screenshot/s2.PNG)
+![Example screenshot](./Screenshot/s3.PNG)
+![Example screenshot](./Screenshot/s4.PNG)
+![Example screenshot](./Screenshot/s5.PNG)
+![Example screenshot](./Screenshot/s6.PNG)
+![Example screenshot](./Screenshot/s7.PNG)
+![Example screenshot](./Screenshot/s8.PNG)
+![Example screenshot](./Screenshot/s9.PNG)
+![Example screenshot](./Screenshot/s10.PNG)
 
 ## Contact
 [Sabiha Begum Jaggir Hussain](https://sabihabegumj.com/) - feel free to contact me!
